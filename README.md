@@ -8,6 +8,7 @@
 </p>
 
 # Boltzmann Machines
+## This fork updates the code to python3 (3.6 in particular)
 This repository implements generic and flexible RBM and DBM models with lots of features and reproduces some experiments from *"Deep boltzmann machines"* [**[1]**](#1), *"Learning with hierarchical-deep models"* [**[2]**](#2), *"Learning multiple layers of features from tiny images"* [**[3]**](#3), and some others.
 
 ## Table of contents

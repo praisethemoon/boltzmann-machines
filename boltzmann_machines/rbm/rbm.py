@@ -3,7 +3,7 @@ import tensorflow as tf
 from tensorflow.contrib.distributions import Multinomial
 
 import env
-from base_rbm import BaseRBM
+from boltzmann_machines.rbm.base_rbm import BaseRBM
 from boltzmann_machines.layers import BernoulliLayer, MultinomialLayer, GaussianLayer
 
 

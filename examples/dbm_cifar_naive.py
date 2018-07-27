@@ -20,7 +20,7 @@ References
 [1] A. Krizhevsky and G. Hinton. Learning multiple layers of features
     from tine images. 2009.
 """
-print __doc__
+print(__doc__)
 
 import os
 import argparse

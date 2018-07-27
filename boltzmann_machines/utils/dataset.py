@@ -4,7 +4,7 @@ import os.path
 import numpy as np
 import matplotlib.pyplot as plt
 
-from rng import RNG
+from boltzmann_machines.utils.rng import RNG
 
 
 def load_mnist(mode='train', path='.'):
@@ -53,7 +53,7 @@ def load_cifar10(mode='train', path='.'):
     dirpath = os.path.join(path, 'cifar-10-batches-py/')
     batch_size = 10000
     if mode == 'train':
-        fnames = ['data_batch_{0}'.format(i) for i in xrange(1, 5 + 1)]
+        fnames = ['data_batch_{0}'.format(i) for i in range(1, 5 + 1)]
     elif mode == 'test':
         fnames = ['test_batch']
     else:
@@ -65,7 +65,7 @@ def load_cifar10(mode='train', path='.'):
     for fname in fnames:
         fname = os.path.join(dirpath, fname)
         with open(fname, 'rb') as fdata:
-            _data = pickle.load(fdata)
+            _data = pickle.load(fdata, encoding='latin1')
             data[start:(start + batch_size)] = np.asarray(_data['data'])
             target[start:(start + batch_size)] = np.asarray(_data['labels'])
         start += 10000

@@ -3,8 +3,8 @@ import json
 import tensorflow as tf
 from functools import wraps
 
-from boltzmann_machines.base import (BaseModel, DtypeMixin,
-                                     is_param_name)
+from boltzmann_machines.base.base_model import BaseModel, is_param_name
+from boltzmann_machines.base.mixin import DtypeMixin
 
 
 def run_in_tf_session(check_initialized=True, update_seed=False):
@@ -141,7 +141,7 @@ class TensorFlowModel(BaseModel, DtypeMixin):
     @classmethod
     def load_model(cls, model_path):
         paths = TensorFlowModel.compute_working_paths(model_path)
-
+        print( paths)
         # load params
         with open(paths['params_filepath'], 'r') as params_file:
             params = json.load(params_file)
